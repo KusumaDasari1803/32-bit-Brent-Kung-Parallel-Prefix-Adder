@@ -43,7 +43,7 @@ module Brent_Kung_8bit (
     Gray gc4 (g3_0, p3_0, c[0], c[4]);
     Gray gc5 (g[4], p[4], c[4], c[5]);
     Gray gc6 (g5_4, p5_4, c[4], c[6]);
-    Gray gc7 (g7_0, p7_0, c[0], c[7]);
+    Gray gc7 (g[6], p[6], c[6], c[7]);
 
     assign cout = g7_0 | (p7_0 & c[0]);
 
