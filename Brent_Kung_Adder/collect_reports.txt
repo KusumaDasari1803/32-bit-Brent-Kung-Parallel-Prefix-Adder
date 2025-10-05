@@ -1,0 +1,8 @@
+# collect_reports.tcl - works for combinational adder designs
+
+# General timing summary
+report_timing_summary -delay_type max -file timing_summary.txt
+
+
+# Resource and routing reports
+report_utilization -file utilization.txt
