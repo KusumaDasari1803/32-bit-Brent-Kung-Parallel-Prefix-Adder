@@ -1,0 +1,40 @@
+# Comparative Analysis of 32-bit Adders (Vivado Synthesis)
+
+## 1. Critical Path Delay and Slack
+
+* Ripple-Carry Adder (RCA): 4.857 ns data path delay, 12.164 ns required time, 7.114 ns arrival time, 5.050 ns slack
+* Flat 32-bit Brent–Kung (BK): 2.636 ns data path delay, 12.164 ns required time, 4.893 ns arrival time, 7.271 ns slack
+* Modular 8-bit Brent–Kung (4×8-bit): 2.414 ns data path delay, 12.164 ns required time, 4.664 ns arrival time, 7.586 ns slack
+
+**Observation:** Both Brent–Kung designs are ~2× faster than ripple-carry.
+
+---
+
+## 2. Logic Depth (Levels of Logic)
+
+* RCA: 16 levels
+* Flat BK: 5 levels
+* Modular BK: 4 levels
+
+**Observation:** Brent–Kung drastically reduces logic depth vs ripple-carry.
+
+---
+
+## 3. Resource Utilization
+
+* RCA: ~32 LUTs, 98 FFs
+* Flat BK: ~57 LUTs, 98 FFs
+* Modular BK: ~57 LUTs, 98 FFs
+
+**Observation:** Ripple-carry is area-efficient but slower; BK uses more LUTs but enables higher speed.
+
+---
+
+## 4. Key Takeaways
+
+* RCA: Best for low area, not for high-speed designs.
+* Flat BK: Balanced prefix adder with moderate resource cost.
+* Modular BK: Fastest in this study, good trade-off of speed vs resources.
+
+---
+
